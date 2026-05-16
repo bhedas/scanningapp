@@ -3,109 +3,197 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background">
+    android:background="#0D1117">
 
-    <!-- Device Info Card -->
+    <!-- ── Header Card ───────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:background="@color/surface">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:background="#0D47A1">
 
         <TextView
             android:id="@+id/deviceNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary" />
+            android:textColor="#FFFFFF"
+            android:letterSpacing="0.02" />
 
         <TextView
             android:id="@+id/deviceAddressText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:fontFamily="monospace"
-            android:textColor="@color/text_secondary"
+            android:textColor="#90CAF9"
             android:layout_marginTop="2dp" />
 
         <TextView
-            android:id="@+id/scanStatusText"
+            android:id="@+id/scanStatusDot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:layout_marginTop="4dp"
-            android:text="● Starting…"
-            android:textColor="@color/status_connecting" />
-
+            android:textSize="11sp"
+            android:textColor="#69F0AE"
+            android:layout_marginTop="6dp" />
     </LinearLayout>
 
-    <!-- Controls Row -->
+    <!-- ── Stats Row ─────────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="12dp"
-        android:gravity="center_vertical"
-        android:background="@color/surface">
+        android:padding="8dp"
+        android:background="#0A3069">
 
-        <TextView
-            android:id="@+id/packetCountText"
+        <!-- Packet count -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Packets: 0"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="#0D47A1"
+            android:layout_marginEnd="4dp">
+            <TextView
+                android:id="@+id/statPackets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0\nPackets"
+                android:gravity="center"
+                android:textColor="#80DEEA"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Delta -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="#0D47A1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp">
+            <TextView
+                android:id="@+id/statDelta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—\nΔ Interval"
+                android:gravity="center"
+                android:textColor="#607D8B"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- RSSI -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            android:background="#0D47A1"
+            android:layout_marginStart="4dp">
+            <TextView
+                android:id="@+id/statRssi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—\nRSSI"
+                android:gravity="center"
+                android:textColor="#607D8B"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ── Button Row ─────────────────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:background="#111827">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/stopButton"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="⏸  Stop"
+            android:textAllCaps="false"
             android:textSize="13sp"
-            android:textColor="@color/text_secondary" />
+            android:backgroundTint="#B71C1C"
+            android:layout_marginEnd="6dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/clearButton"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Clear"
+            android:text="🗑  Clear"
             android:textAllCaps="false"
-            android:layout_marginEnd="8dp" />
+            android:textSize="13sp"
+            android:textColor="#90A4AE"
+            android:layout_marginEnd="6dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/connectButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Connect"
-            android:textAllCaps="false" />
-
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="🔗 Connect"
+            android:textAllCaps="false"
+            android:textSize="13sp"
+            android:backgroundTint="#4A148C" />
     </LinearLayout>
 
-    <!-- Section Label -->
+    <!-- ── Section Label ──────────────────────────────────────── -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingTop="10dp"
+        android:paddingStart="14dp"
+        android:paddingTop="8dp"
         android:paddingBottom="4dp"
         android:text="LIVE ADVERTISEMENT LOG"
-        android:textSize="11sp"
-        android:letterSpacing="0.12"
-        android:textColor="@color/text_secondary" />
+        android:textSize="10sp"
+        android:letterSpacing="0.15"
+        android:textColor="#37474F"
+        android:background="#0D1117" />
 
-    <!-- Log Output -->
+    <!-- ── Log Output ──────────────────────────────────────────── -->
     <ScrollView
         android:id="@+id/advLogScroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#0D0D0D">
+        android:background="#0D1117"
+        android:fillViewport="true">
 
         <TextView
             android:id="@+id/advLogView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
-            android:textColor="#00E676"
             android:fontFamily="monospace"
-            android:textSize="11sp"
-            android:lineSpacingMultiplier="1.4" />
+            android:textSize="11.5sp"
+            android:lineSpacingMultiplier="1.45"
+            android:bufferType="spannable"
+            android:textIsSelectable="true" />
 
     </ScrollView>
 
