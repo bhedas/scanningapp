@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="byte["
+        android:textColor="#607D8B"
+        android:textSize="13sp"
+        android:fontFamily="monospace" />
+
+    <EditText
+        android:id="@+id/filterByteIndex"
+        android:layout_width="44dp"
+        android:layout_height="36dp"
+        android:inputType="number"
+        android:hint="0"
+        android:textColor="#ECEFF1"
+        android:textColorHint="#37474F"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:background="#1E272C"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="] = 0x"
+        android:textColor="#607D8B"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp" />
+
+    <EditText
+        android:id="@+id/filterByteValue"
+        android:layout_width="52dp"
+        android:layout_height="36dp"
+        android:inputType="textNoSuggestions"
+        android:hint="FF"
+        android:textColor="#ECEFF1"
+        android:textColorHint="#37474F"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:background="#1E272C"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" />
+
+    <ImageButton
+        android:id="@+id/removeFilterBtn"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@android:drawable/ic_delete"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#546E7A"
+        android:contentDescription="Remove filter" />
+
+</LinearLayout>

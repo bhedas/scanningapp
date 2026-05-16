@@ -117,6 +117,13 @@ class AdvertisementActivity : AppCompatActivity() {
                 putExtra(MainActivity.EXTRA_DEVICE_NAME, deviceName)
             })
         }
+        findViewById<com.google.android.material.button.MaterialButton>(R.id.parserButton)
+            .setOnClickListener {
+                startActivity(Intent(this, ParserSetupActivity::class.java).apply {
+                    putExtra(MainActivity.EXTRA_DEVICE_ADDRESS, address)
+                    putExtra(MainActivity.EXTRA_DEVICE_NAME, deviceName)
+                })
+            }
 
         startListening()
     }

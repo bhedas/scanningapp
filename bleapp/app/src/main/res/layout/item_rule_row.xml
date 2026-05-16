@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#0D1F3C"
+    android:padding="10dp"
+    android:layout_marginTop="6dp">
+
+    <!-- Rule header row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/ruleNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rule"
+            android:textColor="#546E7A"
+            android:textSize="11sp"
+            android:textAllCaps="true"
+            android:letterSpacing="0.1" />
+
+        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/removeRuleBtn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@android:drawable/ic_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#455A64"
+            android:contentDescription="Remove rule" />
+    </LinearLayout>
+
+    <!-- Label -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:text="Label"
+            android:textColor="#546E7A"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/ruleLabel"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:hint="e.g. Temperature"
+            android:textColor="#ECEFF1"
+            android:textColorHint="#37474F"
+            android:textSize="13sp"
+            android:background="#1E272C"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <!-- Byte range -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:text="Bytes"
+            android:textColor="#546E7A"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/ruleByteStart"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:hint="0"
+            android:textColor="#ECEFF1"
+            android:textColorHint="#37474F"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:background="#1E272C"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  —  "
+            android:textColor="#546E7A"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/ruleByteEnd"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:hint="1"
+            android:textColor="#ECEFF1"
+            android:textColorHint="#37474F"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:background="#1E272C"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Format"
+            android:textColor="#546E7A"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/formatSpinner"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:background="#1E272C"
+            android:paddingStart="6dp" />
+    </LinearLayout>
+
+    <!-- Multiplier + Unit -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:text="× Mult"
+            android:textColor="#546E7A"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/ruleMultiplier"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            android:hint="1.0"
+            android:textColor="#ECEFF1"
+            android:textColorHint="#37474F"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:background="#1E272C"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Unit"
+            android:textColor="#546E7A"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/ruleUnit"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:hint="°C"
+            android:textColor="#ECEFF1"
+            android:textColorHint="#37474F"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:background="#1E272C"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginStart="6dp"
+            android:inputType="text" />
+    </LinearLayout>
+
+</LinearLayout>

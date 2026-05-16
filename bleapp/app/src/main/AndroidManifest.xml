@@ -30,6 +30,12 @@
         <activity android:name=".DeviceActivity" android:exported="false"
             android:parentActivityName=".AdvertisementActivity" />
 
+        <activity android:name=".ParserSetupActivity" android:exported="false"
+            android:parentActivityName=".AdvertisementActivity" />
+
+        <activity android:name=".ParsedLiveActivity" android:exported="false"
+            android:parentActivityName=".ParserSetupActivity" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#111827"
+    android:layout_marginBottom="12dp"
+    android:padding="12dp">
+
+    <!-- Frame header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp">
+
+        <EditText
+            android:id="@+id/frameNameEdit"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="Frame name"
+            android:textColor="#ECEFF1"
+            android:textColorHint="#37474F"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="#0D1F3C"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:inputType="text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/removeFrameBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="Remove"
+            android:textColor="#546E7A"
+            android:textSize="11sp"
+            android:textAllCaps="false"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- Filters section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FILTERS  (all must match)"
+        android:textSize="10sp"
+        android:letterSpacing="0.12"
+        android:textColor="#37474F"
+        android:layout_marginBottom="4dp" />
+
+    <LinearLayout
+        android:id="@+id/filtersContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addFilterBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:text="+ Add Filter"
+        android:textColor="#455A64"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1E272C"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Rules section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PARSE RULES"
+        android:textSize="10sp"
+        android:letterSpacing="0.12"
+        android:textColor="#37474F"
+        android:layout_marginBottom="4dp" />
+
+    <LinearLayout
+        android:id="@+id/rulesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addRuleBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:text="+ Add Rule"
+        android:textColor="#455A64"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>

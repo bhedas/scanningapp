@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0D1117">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DATA SOURCE"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:textColor="#37474F"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#111827"
+                android:padding="12dp"
+                android:layout_marginBottom="20dp">
+
+                <RadioGroup
+                    android:id="@+id/dataSourceGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radioManufacturer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manufacturer Data"
+                        android:textColor="#90A4AE"
+                        android:textSize="14sp"
+                        android:checked="true"
+                        android:paddingStart="8dp"
+                        android:paddingBottom="6dp" />
+
+                    <RadioButton
+                        android:id="@+id/radioRaw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Raw Advertisement Bytes"
+                        android:textColor="#90A4AE"
+                        android:textSize="14sp"
+                        android:paddingStart="8dp"
+                        android:paddingBottom="6dp" />
+
+                    <RadioButton
+                        android:id="@+id/radioService"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Service Data"
+                        android:textColor="#90A4AE"
+                        android:textSize="14sp"
+                        android:paddingStart="8dp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FRAME DEFINITIONS"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:textColor="#37474F"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/framesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addFrameBtn"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:text="+ Add Frame Definition"
+                android:textAllCaps="false"
+                android:textColor="#546E7A"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/startParsingBtn"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Start Parsing"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:backgroundTint="#0D47A1" />
+
+</LinearLayout>

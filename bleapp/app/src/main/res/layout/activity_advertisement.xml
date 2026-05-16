@@ -188,7 +188,18 @@
             android:text="Connect"
             android:textAllCaps="false"
             android:textSize="12sp"
-            android:backgroundTint="#4A148C" />
+            android:backgroundTint="#4A148C"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/parserButton"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:text="Parser"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:backgroundTint="#E65100" />
     </LinearLayout>
 
     <!-- ── Log Label ──────────────────────────────────────────────────── -->
