@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="#0D1117">
 
-    <!-- ── Header Card ───────────────────────────────────────── -->
+    <!-- ── Header ─────────────────────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,45 +13,65 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:paddingTop="14dp"
-        android:paddingBottom="14dp"
+        android:paddingBottom="12dp"
         android:background="#0D47A1">
 
-        <TextView
-            android:id="@+id/deviceNameText"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:letterSpacing="0.02" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/deviceAddressText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:fontFamily="monospace"
-            android:textColor="#90CAF9"
-            android:layout_marginTop="2dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/scanStatusDot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="11sp"
-            android:textColor="#69F0AE"
-            android:layout_marginTop="6dp" />
+                <TextView
+                    android:id="@+id/deviceNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/deviceAddressText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:fontFamily="monospace"
+                    android:textColor="#90CAF9"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/scanStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#69F0AE"
+                android:background="#0A2472"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp" />
+        </LinearLayout>
     </LinearLayout>
 
-    <!-- ── Stats Row ─────────────────────────────────────────── -->
+    <!-- ── Stats Row ──────────────────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
-        android:background="#0A3069">
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:background="#111827">
 
-        <!-- Packet count -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -59,7 +79,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:padding="8dp"
-            android:background="#0D47A1"
+            android:background="#0D1F3C"
             android:layout_marginEnd="4dp">
             <TextView
                 android:id="@+id/statPackets"
@@ -67,36 +87,33 @@
                 android:layout_height="wrap_content"
                 android:text="0\nPackets"
                 android:gravity="center"
-                android:textColor="#80DEEA"
-                android:textSize="13sp"
+                android:textColor="#78909C"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace" />
         </LinearLayout>
 
-        <!-- Delta -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:orientation="vertical"
             android:gravity="center"
             android:padding="8dp"
-            android:background="#0D47A1"
-            android:layout_marginStart="4dp"
+            android:background="#0D1F3C"
             android:layout_marginEnd="4dp">
             <TextView
-                android:id="@+id/statDelta"
+                android:id="@+id/statMedian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="—\nΔ Interval"
+                android:text="—\nMedian Interval"
                 android:gravity="center"
-                android:textColor="#607D8B"
-                android:textSize="13sp"
+                android:textColor="#455A64"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace" />
         </LinearLayout>
 
-        <!-- RSSI -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -104,85 +121,96 @@
             android:orientation="vertical"
             android:gravity="center"
             android:padding="8dp"
-            android:background="#0D47A1"
-            android:layout_marginStart="4dp">
+            android:background="#0D1F3C">
             <TextView
                 android:id="@+id/statRssi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="—\nRSSI"
                 android:gravity="center"
-                android:textColor="#607D8B"
-                android:textSize="13sp"
+                android:textColor="#455A64"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace" />
         </LinearLayout>
     </LinearLayout>
 
-    <!-- ── Button Row ─────────────────────────────────────────── -->
+    <!-- ── Button Row ─────────────────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp"
-        android:gravity="center_vertical"
-        android:background="#111827">
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="#0D1117">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/stopButton"
             android:layout_width="0dp"
-            android:layout_height="36dp"
+            android:layout_height="34dp"
             android:layout_weight="1"
-            android:text="⏸  Stop"
+            android:text="Stop"
             android:textAllCaps="false"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:backgroundTint="#B71C1C"
-            android:layout_marginEnd="6dp" />
+            android:layout_marginEnd="4dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/clearButton"
             android:layout_width="0dp"
-            android:layout_height="36dp"
+            android:layout_height="34dp"
             android:layout_weight="1"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="🗑  Clear"
+            android:text="Clear"
             android:textAllCaps="false"
-            android:textSize="13sp"
-            android:textColor="#90A4AE"
-            android:layout_marginEnd="6dp" />
+            android:textSize="12sp"
+            android:textColor="#546E7A"
+            android:layout_marginEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:text="Save Log"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:backgroundTint="#1B5E20"
+            android:layout_marginEnd="4dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/connectButton"
             android:layout_width="0dp"
-            android:layout_height="36dp"
+            android:layout_height="34dp"
             android:layout_weight="1"
-            android:text="🔗 Connect"
+            android:text="Connect"
             android:textAllCaps="false"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:backgroundTint="#4A148C" />
     </LinearLayout>
 
-    <!-- ── Section Label ──────────────────────────────────────── -->
+    <!-- ── Log Label ──────────────────────────────────────────────────── -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="14dp"
-        android:paddingTop="8dp"
+        android:paddingTop="6dp"
         android:paddingBottom="4dp"
-        android:text="LIVE ADVERTISEMENT LOG"
-        android:textSize="10sp"
-        android:letterSpacing="0.15"
-        android:textColor="#37474F"
+        android:text="ADVERTISEMENT LOG"
+        android:textSize="9sp"
+        android:letterSpacing="0.18"
+        android:textColor="#263238"
         android:background="#0D1117" />
 
-    <!-- ── Log Output ──────────────────────────────────────────── -->
+    <!-- ── Log Output ──────────────────────────────────────────────────── -->
     <ScrollView
         android:id="@+id/advLogScroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#0D1117"
-        android:fillViewport="true">
+        android:background="#0D1117">
 
         <TextView
             android:id="@+id/advLogView"
@@ -190,10 +218,11 @@
             android:layout_height="wrap_content"
             android:padding="12dp"
             android:fontFamily="monospace"
-            android:textSize="11.5sp"
-            android:lineSpacingMultiplier="1.45"
+            android:textSize="11sp"
+            android:lineSpacingMultiplier="1.5"
             android:bufferType="spannable"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:textColorHighlight="#1E4976" />
 
     </ScrollView>
 
