@@ -30,9 +30,14 @@
         </activity>
 
         <activity
-            android:name=".DeviceActivity"
+            android:name=".AdvertisementActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".DeviceActivity"
+            android:exported="false"
+            android:parentActivityName=".AdvertisementActivity" />
 
     </application>
 </manifest>

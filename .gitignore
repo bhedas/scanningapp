@@ -1,2 +1,4 @@
 
 /bleapp/app/build
+/bleapp/.gradle
+/bleapp/.idea

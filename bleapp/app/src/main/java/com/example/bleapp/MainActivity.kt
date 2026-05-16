@@ -74,9 +74,8 @@ class MainActivity : AppCompatActivity() {
         bluetoothAdapter = btManager.adapter
 
         deviceAdapter = DeviceAdapter(devices) { result ->
-            stopScan()
             val name = try { result.device.name } catch (e: SecurityException) { null }
-            val intent = Intent(this, DeviceActivity::class.java).apply {
+            val intent = Intent(this, AdvertisementActivity::class.java).apply {
                 putExtra(EXTRA_DEVICE_ADDRESS, result.device.address)
                 putExtra(EXTRA_DEVICE_NAME, name ?: "Unknown Device")
             }
